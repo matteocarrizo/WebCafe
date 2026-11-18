@@ -267,6 +267,67 @@ textarea.campo__field {
 }
 
 /* Botón de enviar a todo el ancho */
+.formulario {
+    position: relative;
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    max-width: 80rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .18);
+}
+@media (min-width: 768px) {
+    .formulario {
+        padding: 5rem;
+    }
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;   /* antes estaba en fila */
+    margin-bottom: 1.5rem;
+}
+.campo__label {
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: .6rem;
+}
+.campo__field {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid var(--gris);
+    border-radius: 0;
+    background-color: var(--blanco);
+    color: var(--negro);
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    transition: border-color .2s, box-shadow .2s;
+}
+.campo__field:focus-visible {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(120, 77, 60, .3);
+}
+.campo__field.invalido {
+    border-color: #b3261e;
+}
+textarea.campo__field {
+    min-height: 15rem;
+    resize: vertical;
+}
+.campo__error {
+    display: block;
+    min-height: 2rem;
+    margin-top: .4rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: #b3261e;
+}
+
+/* Botón de enviar a todo el ancho */
 .formulario .boton {
     width: 100%;
     margin-bottom: 0;
@@ -292,8 +353,6 @@ textarea.campo__field {
 }
 .formulario__estado.ok  { color: #2e6b34; }
 .formulario__estado.err { color: #b3261e; }
-
-
 .contaco-bg,
 .contacto-bg {
     background-image: url(../img/contacto.jpg);
