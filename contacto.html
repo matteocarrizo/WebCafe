@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -43,26 +43,50 @@
         
         <div class="contaco-bg"></div>
 
-        <form class="formulario">
-            <div class="campo">
-                <label class="campo__label" for="nombre">Nombre</label>
-                <input class="campo__field" type="text" placeholder="Tu Nombre" id="nombre">
-            </div>
+<form class="formulario" id="form-contacto" novalidate>
 
-            <div class="campo">
-                <label class="campo__label" for="email">E-mail</label>
-                <input class="campo__field" type="email" placeholder="Tu E-mail" id="email">
-            </div>
+  <div class="campo">
+    <label class="campo__label" for="nombre">Nombre</label>
+    <input class="campo__field" type="text" id="nombre" name="nombre"
+           placeholder="Tu nombre" autocomplete="name"
+           required minlength="2" maxlength="60">
+    <span class="campo__error" aria-live="polite"></span>
+  </div>
 
-            <div class="campo">
-                <label class="campo__label" for="mensaje">Mensaje</label>
-                <textarea class="campo__field" id="mensaje"></textarea>
-            </div>
+  <div class="campo">
+    <label class="campo__label" for="email">E-mail</label>
+    <input class="campo__field" type="email" id="email" name="email"
+           placeholder="tuemail@ejemplo.com" autocomplete="email"
+           required>
+    <span class="campo__error" aria-live="polite"></span>
+  </div>
 
-            <div class="campo">
-                <input type="submit" value="Enviar" class="boton boton--primario">
-            </div>
-        </form>
+  <div class="campo">
+    <label class="campo__label" for="asunto">Asunto</label>
+    <select class="campo__field" id="asunto" name="asunto" required>
+      <option value="" disabled selected>Elegí una opción</option>
+      <option value="consulta">Consulta general</option>
+      <option value="cursos">Consulta sobre cursos</option>
+      <option value="colaboracion">Colaboración</option>
+      <option value="otro">Otro</option>
+    </select>
+    <span class="campo__error" aria-live="polite"></span>
+  </div>
+
+  <div class="campo">
+    <label class="campo__label" for="mensaje">Mensaje</label>
+    <textarea class="campo__field" id="mensaje" name="mensaje" rows="6"
+              placeholder="Contanos en qué te podemos ayudar"
+              required minlength="10" maxlength="1000"></textarea>
+    <span class="campo__error" aria-live="polite"></span>
+  </div>
+
+  <div class="campo">
+    <input type="submit" value="Enviar" class="boton boton--primario">
+  </div>
+
+  <p class="formulario__estado" id="estado" role="status" aria-live="polite"></p>
+</form>
        
     </main>
 
